@@ -1,0 +1,24 @@
+{
+  "name": "swaglabs-tests",
+  "version": "1.0.0",
+  "description": "Automated tests for Swag Labs app written in Javascript and Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emiliachojak/swaglabs-tests.git"
+  },
+  "keywords": [],
+  "author": "Emilia Chojak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emiliachojak/swaglabs-tests/issues"
+  },
+  "homepage": "https://github.com/emiliachojak/swaglabs-tests#readme",
+  "dependencies": {
+    "cypress": "^6.4.0"
+  }
+}
