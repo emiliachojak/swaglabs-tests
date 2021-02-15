@@ -2,5 +2,9 @@
     "correct": {
         "login": "standard_user",
         "password": "secret_sauce"
+    },
+    "incorrect": {
+        "login": "wrong_user",
+        "password": "wrong_password"
     }
 }

@@ -25,4 +25,12 @@ export class LoginPage {
 
     return new InventoryPage();
   }
+
+  getLoginPageUrl() {
+    return cy.url();
+  }
+
+  getWrongCredentialsError() {
+    return cy.get("[data-test=error]");
+  }
 }

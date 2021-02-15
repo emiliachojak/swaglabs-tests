@@ -23,4 +23,20 @@ describe("Logging in test suite", () => {
     inventoryPage.getInventoryContainer().should("exist");
     inventoryPage.getProductLabel().should("have.text", "Products");
   });
+
+  it("Should not login with incorrect data and display error message", () => {
+    const loginPage = new LoginPage();
+
+    loginPage.visit();
+
+    loginPage.inputUsername(testdata.incorrect.login);
+    loginPage.inputPassword(testdata.incorrect.password);
+    loginPage.clickLoginButton();
+
+    loginPage.getLoginPageUrl().should("equal", Cypress.config("baseUrl"));
+    loginPage.getWrongCredentialsError().should("exist");
+    loginPage
+      .getWrongCredentialsError()
+      .contains("Username and password do not match any user in this service");
+  });
 });
