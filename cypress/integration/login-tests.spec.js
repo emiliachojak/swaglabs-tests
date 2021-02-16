@@ -9,7 +9,7 @@ describe("Logging in test suite", () => {
     });
   });
 
-  it("Should login with correct data", () => {
+  it("Should log in with correct data", () => {
     const loginPage = new LoginPage();
 
     loginPage.visit();
@@ -24,7 +24,7 @@ describe("Logging in test suite", () => {
     inventoryPage.getProductLabel().should("have.text", "Products");
   });
 
-  it("Should not login with incorrect data and display error message", () => {
+  it("Should not log in with incorrect data and display error message", () => {
     const loginPage = new LoginPage();
 
     loginPage.visit();
@@ -34,9 +34,12 @@ describe("Logging in test suite", () => {
     loginPage.clickLoginButton();
 
     loginPage.getLoginPageUrl().should("equal", Cypress.config("baseUrl"));
-    loginPage.getWrongCredentialsError().should("exist");
     loginPage
       .getWrongCredentialsError()
-      .contains("Username and password do not match any user in this service");
+      .should("exist")
+      .should(
+        "contain.text",
+        "Username and password do not match any user in this service"
+      );
   });
 });
